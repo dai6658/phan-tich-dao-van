@@ -54,7 +54,7 @@ streamlit run app.py
 ## 📂 Cách sử dụng
 
 1. Đặt các file cần so sánh vào cùng thư mục (hỗ trợ `.txt`, `.docx`, `.pdf`).
-2. Mở giao diện Streamlit và chọn **file nghi vấn**, **file nguồn**.
+2. Mở giao diện Streamlit và chọn **file nghi vấn**, **file nguồn** và chọn ngưỡng.
 3. Hệ thống sẽ tự động so sánh từng câu với các câu trong các file khác.
 4. Hiển thị các câu giống nhau về ngữ nghĩa kèm điểm tương đồng (cosine similarity).
 5. Cho biết liệu văn bản có đạo văn hay không (dựa vào số lượng câu bị trùng ý).
@@ -68,7 +68,7 @@ streamlit run app.py
 3. Tiền xử lý câu: chuẩn hóa, xóa dấu, bỏ stopword.
 4. Mã hóa câu bằng SBERT để tạo **embedding vector**.
 5. Tính cosine similarity giữa các câu nghi vấn và câu trong các file khác.
-6. In ra kết quả nếu độ tương đồng >= 0.8.
+6. In ra kết quả nếu độ tương đồng > độ tương đồng chọn trên giao diện streamlit.
 
 ---
 
