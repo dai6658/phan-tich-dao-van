@@ -22,8 +22,8 @@
 📦phan-tich-dao-van/
 ├── app.py                   # Giao diện Streamlit chính
 ├── analyzer.py              # Xử lý đạo văn (so sánh từng câu)
-├── file_utils.py            # Đọc và xử lý văn bản từ các file
-├── model_utils.py           # Load model SBERT
+├── file_utils.py            # Đọc các file docx pdf txt
+├── model_utils.py           # Load model SBERT, tiền xử lý văn bản
 ├── vietnamese-stopwords.txt # Danh sách stopword tiếng Việt
 ```
 
