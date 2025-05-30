@@ -1,0 +1,6 @@
+streamlit
+sentence-transformers
+underthesea
+scikit-learn
+python-docx
+PyPDF2
