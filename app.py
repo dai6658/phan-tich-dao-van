@@ -8,7 +8,7 @@ from analyzer import analyze_plagiarism
 
 model = load_model()
 
-st.title("📄🔍 Phát hiện đạo văn theo câu")
+st.title("Phát hiện đạo văn theo câu")
 
 file_suspect = st.file_uploader("Tải lên file nghi vấn", type=["txt", "pdf", "docx"])
 file_sources = st.file_uploader("Tải lên các file nguồn", type=["txt", "pdf", "docx"], accept_multiple_files=True)
@@ -27,7 +27,7 @@ if file_suspect and file_sources:
                 f.write(fs.read())
             path_sources.append(p)
 
-        st.info("🔎 Đang phân tích...")
+        st.info("Đang phân tích...")
         results = analyze_plagiarism(path_sus, path_sources, model, read_file, threshold)
 
         from underthesea import sent_tokenize
@@ -42,13 +42,13 @@ if file_suspect and file_sources:
         ty_le = so_cau_nghi / tong_cau if tong_cau > 0 else 0
 
         if ty_le >= 0.7:
-            ket_luan = "🟥 Đạo văn nghiêm trọng"
+            ket_luan = "Đạo văn nghiêm trọng"
         elif ty_le >= 0.3:
-            ket_luan = "🟧 Đạo văn một phần"
+            ket_luan = "Đạo văn một phần"
         elif so_cau_nghi > 0:
-            ket_luan = "🟨 Một vài câu bị nghi đạo"
+            ket_luan = "Một vài câu bị nghi đạo"
         else:
-            ket_luan = "🟩 Không có dấu hiệu đạo văn"
+            ket_luan = "Không có dấu hiệu đạo văn"
 
         st.markdown(f"""
         ### 🧾 Kết quả tổng hợp
@@ -59,13 +59,13 @@ if file_suspect and file_sources:
         """)
 
         if results:
-            st.warning(f"⚠️ Chi tiết các câu bị nghi đạo văn:")
+            st.warning(f"Chi tiết các câu bị nghi đạo văn:")
             for r in results:
                 st.markdown(f"""
-                🔸 <b>Câu nghi vấn:</b> {r['cau_nghi']}<br>
-                🔹 <b>Câu nguồn ({r['nguon']}):</b> {r['cau_nguon']}<br>
-                🎯 <b>Độ tương đồng:</b> {r['diem']}
+                <b>Câu nghi vấn:</b> {r['cau_nghi']}<br>
+                <b>Câu nguồn ({r['nguon']}):</b> {r['cau_nguon']}<br>
+                <b>Độ tương đồng:</b> {r['diem']}
                 <hr>
                 """, unsafe_allow_html=True)
         else:
-            st.success("✅ Không phát hiện đạo văn từ các nguồn đã chọn.")
+            st.success("Không phát hiện đạo văn từ các nguồn đã chọn.")
