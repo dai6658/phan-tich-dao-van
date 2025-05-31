@@ -1,25 +1,25 @@
 
-# 📚 Hệ thống Phát hiện Đạo văn Ngữ nghĩa Tiếng Việt
+# Hệ thống Phát hiện Đạo văn Ngữ nghĩa Tiếng Việt
 
 Đây là một hệ thống phát hiện đạo văn sử dụng **SBERT tiếng Việt** để so sánh **ngữ nghĩa** giữa các câu trong nhiều văn bản. Hệ thống hỗ trợ các định dạng file: `.txt`, `.docx`, `.pdf` và có giao diện thân thiện qua **Streamlit**.
 
 ---
 
-## 🧠 Tính năng chính
+## Tính năng chính
 
-- ✅ Tiền xử lý tiếng Việt: tách câu, xóa stopword, chuẩn hóa.
-- ✅ So sánh đạo văn theo **câu** chứ không phải toàn văn bản.
-- ✅ Phát hiện đạo văn từ nhiều nguồn (nhiều file khác nhau).
-- ✅ Sử dụng mô hình **keepitreal/vietnamese-sbert** từ Hugging Face.
-- ✅ Hỗ trợ nhiều định dạng: `.txt`, `.docx`, `.pdf`.
-- ✅ Giao diện web đơn giản, dễ sử dụng qua **Streamlit**.
+- Tiền xử lý tiếng Việt: tách câu, xóa stopword, chuẩn hóa.
+- So sánh đạo văn theo **câu** chứ không phải toàn văn bản.
+- Phát hiện đạo văn từ nhiều nguồn (nhiều file khác nhau).
+- Sử dụng mô hình **keepitreal/vietnamese-sbert** từ Hugging Face.
+- Hỗ trợ nhiều định dạng: `.txt`, `.docx`, `.pdf`.
+- Giao diện web đơn giản, dễ sử dụng qua **Streamlit**.
 
 ---
 
-## 📁 Cấu trúc thư mục
+##  Cấu trúc thư mục
 
 ```
-📦phan-tich-dao-van/
+phan-tich-dao-van/
 ├── app.py                   # Giao diện Streamlit chính
 ├── analyzer.py              # Xử lý đạo văn (so sánh từng câu)
 ├── file_utils.py            # Đọc các file docx pdf txt
@@ -29,7 +29,7 @@
 
 ---
 
-## 🚀 Hướng dẫn chạy
+##  Hướng dẫn chạy
 
 ### 1. Cài đặt thư viện
 ```bash
@@ -51,7 +51,7 @@ streamlit run app.py
 
 ---
 
-## 📂 Cách sử dụng
+##  Cách sử dụng
 
 1. Đặt các file cần so sánh vào cùng thư mục (hỗ trợ `.txt`, `.docx`, `.pdf`).
 2. Mở giao diện Streamlit và chọn **file nghi vấn**, **file nguồn** và chọn ngưỡng.
@@ -61,7 +61,7 @@ streamlit run app.py
 
 ---
 
-## ⚙️ Cách hoạt động (pipeline)
+##  Cách hoạt động (pipeline)
 
 1. Đọc tất cả file văn bản.
 2. Tách từng câu.
@@ -72,7 +72,7 @@ streamlit run app.py
 
 ---
 
-## 📌 Lưu ý
+##  Lưu ý
 
 - Hệ thống hoạt động tốt với văn bản tiếng Việt.
 - Không hiệu quả với PDF dạng scan ảnh (không có text).
@@ -80,12 +80,12 @@ streamlit run app.py
 
 ---
 
-## 📄 Giấy phép
+##  Giấy phép
 
 Dự án mang tính học thuật và nghiên cứu phi thương mại.
 
 ---
 
-## 👤 Tác giả
+##  Tác giả
 Nhóm 10- Kì 2 xử lý ngôn ngữ tự nhiên nhóm 200  
 Hệ thống sử dụng mã nguồn mở từ cộng đồng Hugging Face và Underthesea.
