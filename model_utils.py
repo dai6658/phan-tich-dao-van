@@ -2,6 +2,7 @@
 import re
 import string
 from underthesea import word_tokenize
+from underthesea import text_normalize
 from sentence_transformers import SentenceTransformer
 
 def load_stopwords(file_path="vietnamese-stopwords.txt"):
@@ -18,6 +19,7 @@ def remove_numbered_prefix(text):
 
 def preprocess_sentence(sentence):
     sentence = sentence.lower().translate(str.maketrans("", "", string.punctuation))
+    sentence = text_normalize(sentence)
     words = word_tokenize(sentence)
     return " ".join([w for w in words if w not in stopwords_vn])
 
